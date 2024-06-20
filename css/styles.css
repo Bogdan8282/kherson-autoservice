@@ -114,6 +114,7 @@ section {
 *::before,
 *::after {
   box-sizing: inherit;
+  /* Remove image highlight when tapped on mobile */
   -webkit-tap-highlight-color: transparent;
   -moz-tap-highlight-color: transparent;
   -o-tap-highlight-color: transparent;
@@ -132,7 +133,8 @@ body {
   --white: rgb(255, 255, 255);
   --light-blue: rgb(225, 237, 255);
   --purple: rgb(99, 91, 255);
-  --blue: rgb(128, 233, 255);
+  --sky-blue: rgb(128, 233, 255);
+  --blue: rgb(83, 144, 246);
 }
 
 h1 {
@@ -249,6 +251,7 @@ h4 {
 .benefits {
   width: 100%;
   background: var(--light-blue);
+  margin-bottom: 80px;
 }
 
 .benefits__wrap {
@@ -291,7 +294,7 @@ h4 {
 }
 
 #lightGroup {
-  fill: var(--blue);
+  fill: var(--sky-blue);
 }
 
 #dark1,
@@ -343,50 +346,53 @@ h4 {
 
 #darkWheel,
 #lightWheel {
-  transition: all 1s ease;
+  transition: all 0.8s ease;
   transform-origin: center center;
 }
 #darkWheel {
   fill: var(--purple);
 }
 #lightWheel {
-  fill: var(--blue);
+  fill: var(--sky-blue);
 }
 .benefits__item:hover svg #darkWheel,
 .benefits__item:hover svg #lightWheel {
   animation: rotate360 1s ease forwards;
 }
 
-.path {
-  stroke: #5bb4f3;
-  stroke-width: 1;
+#checkmark {
   fill: none;
-  stroke-dasharray: 500;
+  stroke-dasharray: 140px, 140px;
   stroke-dashoffset: 0;
 }
 
-.mark {
-  stroke: #635bff;
-  stroke-width: 1;
-  fill: none;
-  stroke-dasharray: 500;
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 3s linear;
-  opacity: 0.7;
+.benefits__item:hover svg #checkmark {
+  animation: draw 0.8s ease-in-out alternate;
 }
 
-.mark_light {
-  stroke: #43c4ed;
-  stroke-width: 1;
-  fill: none;
-  stroke-dasharray: 500;
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 3s linear;
-  opacity: 0.7;
-}
-
-.mark:hover {
-  stroke-dashoffset: 500;
+@keyframes draw {
+  from {
+    stroke-dashoffset: 140px;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* Benefits end */
+
+
+/* Map start */
+
+.map {
+  margin-bottom: 80px;
+}
+
+.map-pic {
+  border-radius: 16px;
+}
+.map-pic:hover {
+  opacity: 0.7;
+}
+
+/* Map end */
