@@ -142,15 +142,15 @@ body {
   --blue: rgb(83, 144, 246);
 }
 
-h1 {
+h1, h2 {
   text-align: center;
   font-size: 40px;
   font-weight: 700;
 }
 
-h2 {
-  font-weight: 600;
+h3 {
   font-size: 24px;
+  font-weight: 600;
 }
 
 h4 {
@@ -161,6 +161,11 @@ h4 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 42px;
+}
+
+.phone {
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 /* Header & footer start */
@@ -419,21 +424,42 @@ h4 {
 
 /* Benefits end */
 
-/* Map start */
+/* Location start */
 
-.map {
+.location {
   margin-bottom: 80px;
 }
 
-.map-pic {
-  border-radius: 16px;
+.location__title {
+  margin-bottom: 60px;
+}
+
+.location__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.location__image {
   width: 100%;
 }
-.map-pic:hover {
+
+.location__image-pic {
+  border-radius: 16px;
+  width: 100%;
+  min-height: 400px;
+  object-fit: cover;
+}
+.location__image-pic:hover {
   cursor: pointer;
 }
 
-/* Map end */
+.location__text {
+  width: 100%;
+}
+
+/* Location end */
 
 /* Services start */
 
@@ -466,17 +492,25 @@ h4 {
     object-fit: cover;
   }
 
+  .location__content {
+    flex-direction: column;
+  }
+
+  .location__text {
+    text-align: center;
+  }
+
   body {
     font-size: 20px;
   }
 
-  h1 {
+  h1, h2 {
     text-align: center;
     font-size: 36px;
     font-weight: 700;
   }
 
-  h2 {
+  h3 {
     font-weight: 600;
     font-size: 20px;
   }
@@ -502,9 +536,9 @@ h4 {
     text-align: center;
     margin-right: 0;
   }
-  .map-pic {
+  .location__image-pic {
     object-fit: cover;
-    min-height: 420px;
+    min-height: 400px;
   }
 
   .header__wrap,
@@ -522,15 +556,10 @@ h4 {
     font-size: 18px;
   }
 
-  h1 {
+  h1, h2 {
     text-align: center;
     font-size: 32px;
     font-weight: 700;
-  }
-
-  h2 {
-    font-weight: 600;
-    font-size: 18px;
   }
 
   h4 {
